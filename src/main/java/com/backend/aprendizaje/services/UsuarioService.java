@@ -26,4 +26,10 @@ public class UsuarioService {
     public Usuario createUsuario(Usuario usuario) {
         return usuarioRepository.save(usuario);
     }
+    public void deleteusuario(String id) {
+        if (!usuarioRepository.existsById(id)) {
+            throw new ResourceNotFoundException("Usuario no encontrado con ID: " + id);
+        }
+        usuarioRepository.deleteById(id);
+    }
 }

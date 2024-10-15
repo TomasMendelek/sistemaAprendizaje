@@ -28,4 +28,8 @@ public class UsuarioController {
     public Usuario getUsuarioById(@PathVariable String id) {
         return usuarioService.getUsuarioById(id);
     }
+    @DeleteMapping("/{id}")
+    public void deleteUsuario(@PathVariable String id) {
+        usuarioService.deleteusuario(id);
+    }
 }
